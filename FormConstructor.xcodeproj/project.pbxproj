@@ -24,6 +24,18 @@
 		FF343B4E1E86BF5A0047A996 /* TableDataSourceJSONTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B401E86BF5A0047A996 /* TableDataSourceJSONTemplate.swift */; };
 		FF343B4F1E86BF5A0047A996 /* TableDataSourceTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B411E86BF5A0047A996 /* TableDataSourceTemplate.swift */; };
 		FF343B501E86BF5A0047A996 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B421E86BF5A0047A996 /* UITableView+Register.swift */; };
+		FF343B5F1E8725CF0047A996 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B521E8725CF0047A996 /* Cell.swift */; };
+		FF343B601E8725CF0047A996 /* ContainerTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B541E8725CF0047A996 /* ContainerTemplate.swift */; };
+		FF343B611E8725CF0047A996 /* IContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B551E8725CF0047A996 /* IContainer.swift */; };
+		FF343B621E8725CF0047A996 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B561E8725CF0047A996 /* Footer.swift */; };
+		FF343B631E8725CF0047A996 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B571E8725CF0047A996 /* Header.swift */; };
+		FF343B641E8725CF0047A996 /* MetaInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B591E8725CF0047A996 /* MetaInfoItem.swift */; };
+		FF343B651E8725CF0047A996 /* RegisterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5A1E8725CF0047A996 /* RegisterInfo.swift */; };
+		FF343B661E8725CF0047A996 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5B1E8725CF0047A996 /* Model.swift */; };
+		FF343B671E8725CF0047A996 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5C1E8725CF0047A996 /* Row.swift */; };
+		FF343B681E8725CF0047A996 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5D1E8725CF0047A996 /* Section.swift */; };
+		FF343B691E8725CF0047A996 /* TableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5E1E8725CF0047A996 /* TableContainer.swift */; };
+		FF343B6B1E8726050047A996 /* FormConstructor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FF343B6A1E8726050047A996 /* FormConstructor.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +69,18 @@
 		FF343B401E86BF5A0047A996 /* TableDataSourceJSONTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSourceJSONTemplate.swift; sourceTree = "<group>"; };
 		FF343B411E86BF5A0047A996 /* TableDataSourceTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSourceTemplate.swift; sourceTree = "<group>"; };
 		FF343B421E86BF5A0047A996 /* UITableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
+		FF343B521E8725CF0047A996 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		FF343B541E8725CF0047A996 /* ContainerTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTemplate.swift; sourceTree = "<group>"; };
+		FF343B551E8725CF0047A996 /* IContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IContainer.swift; sourceTree = "<group>"; };
+		FF343B561E8725CF0047A996 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
+		FF343B571E8725CF0047A996 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		FF343B591E8725CF0047A996 /* MetaInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaInfoItem.swift; sourceTree = "<group>"; };
+		FF343B5A1E8725CF0047A996 /* RegisterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInfo.swift; sourceTree = "<group>"; };
+		FF343B5B1E8725CF0047A996 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FF343B5C1E8725CF0047A996 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		FF343B5D1E8725CF0047A996 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		FF343B5E1E8725CF0047A996 /* TableContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableContainer.swift; sourceTree = "<group>"; };
+		FF343B6A1E8726050047A996 /* FormConstructor.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FormConstructor.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +105,8 @@
 		FF343B0E1E86BF0D0047A996 = {
 			isa = PBXGroup;
 			children = (
+				FF343B6A1E8726050047A996 /* FormConstructor.podspec */,
+				FF343B511E8725CF0047A996 /* TableContainer */,
 				FF343B1A1E86BF0D0047A996 /* FormConstructor */,
 				FF343B251E86BF0D0047A996 /* FormConstructorTests */,
 				FF343B191E86BF0D0047A996 /* Products */,
@@ -150,6 +176,41 @@
 				FF343B411E86BF5A0047A996 /* TableDataSourceTemplate.swift */,
 			);
 			path = template;
+			sourceTree = "<group>";
+		};
+		FF343B511E8725CF0047A996 /* TableContainer */ = {
+			isa = PBXGroup;
+			children = (
+				FF343B521E8725CF0047A996 /* Cell.swift */,
+				FF343B531E8725CF0047A996 /* container */,
+				FF343B561E8725CF0047A996 /* Footer.swift */,
+				FF343B571E8725CF0047A996 /* Header.swift */,
+				FF343B581E8725CF0047A996 /* metaInfo */,
+				FF343B5B1E8725CF0047A996 /* Model.swift */,
+				FF343B5C1E8725CF0047A996 /* Row.swift */,
+				FF343B5D1E8725CF0047A996 /* Section.swift */,
+				FF343B5E1E8725CF0047A996 /* TableContainer.swift */,
+			);
+			name = TableContainer;
+			path = TableContainer/TableContainer;
+			sourceTree = "<group>";
+		};
+		FF343B531E8725CF0047A996 /* container */ = {
+			isa = PBXGroup;
+			children = (
+				FF343B541E8725CF0047A996 /* ContainerTemplate.swift */,
+				FF343B551E8725CF0047A996 /* IContainer.swift */,
+			);
+			path = container;
+			sourceTree = "<group>";
+		};
+		FF343B581E8725CF0047A996 /* metaInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FF343B591E8725CF0047A996 /* MetaInfoItem.swift */,
+				FF343B5A1E8725CF0047A996 /* RegisterInfo.swift */,
+			);
+			path = metaInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF343B6B1E8726050047A996 /* FormConstructor.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +327,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF343B631E8725CF0047A996 /* Header.swift in Sources */,
+				FF343B621E8725CF0047A996 /* Footer.swift in Sources */,
 				FF343B4C1E86BF5A0047A996 /* TableDataSourceJSONConfigParser.swift in Sources */,
+				FF343B601E8725CF0047A996 /* ContainerTemplate.swift in Sources */,
 				FF343B491E86BF5A0047A996 /* HeaderMetaInfo.swift in Sources */,
+				FF343B651E8725CF0047A996 /* RegisterInfo.swift in Sources */,
+				FF343B5F1E8725CF0047A996 /* Cell.swift in Sources */,
+				FF343B691E8725CF0047A996 /* TableContainer.swift in Sources */,
 				FF343B501E86BF5A0047A996 /* UITableView+Register.swift in Sources */,
+				FF343B641E8725CF0047A996 /* MetaInfoItem.swift in Sources */,
 				FF343B461E86BF5A0047A996 /* FormCostructorDataSource.swift in Sources */,
 				FF343B471E86BF5A0047A996 /* CellMetaInfo.swift in Sources */,
 				FF343B451E86BF5A0047A996 /* FormConstructorUIConfigurator.swift in Sources */,
@@ -276,9 +345,13 @@
 				FF343B431E86BF5A0047A996 /* FormConstructor.swift in Sources */,
 				FF343B4D1E86BF5A0047A996 /* TableDataSourceDynamicTemplate.swift in Sources */,
 				FF343B481E86BF5A0047A996 /* FooterMetaInfo.swift in Sources */,
+				FF343B671E8725CF0047A996 /* Row.swift in Sources */,
 				FF343B4A1E86BF5A0047A996 /* RowMetaInfo.swift in Sources */,
 				FF343B4F1E86BF5A0047A996 /* TableDataSourceTemplate.swift in Sources */,
+				FF343B661E8725CF0047A996 /* Model.swift in Sources */,
+				FF343B681E8725CF0047A996 /* Section.swift in Sources */,
 				FF343B4E1E86BF5A0047A996 /* TableDataSourceJSONTemplate.swift in Sources */,
+				FF343B611E8725CF0047A996 /* IContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
