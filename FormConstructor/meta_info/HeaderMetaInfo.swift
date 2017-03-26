@@ -11,7 +11,7 @@ import UIKit
 
 public struct HeaderMetaInfo
 {
-    public var create_type:HeaderSectionCreateType?
+    public var create_type:TypeCreate<UITableViewHeaderFooterView.Type>?
     public var height:CGFloat;
     public var title:String?;
     

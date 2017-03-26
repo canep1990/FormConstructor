@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 public enum FormConstructorError : Error
 {
     case serializedjJsonFailed
@@ -19,21 +18,3 @@ public enum FormConstructorError : Error
     case rowFailFormat
 }
 
-
-public enum HeaderSectionCreateType
-{
-    case nib(nib_name:String, reuse_id:String)
-    case code(type:UITableViewHeaderFooterView.Type, reuse_id:String)
-}
-
-public enum FooterSectionCreateType
-{
-    case nib(nib_name:String, reuse_id:String)
-    case code(type:UITableViewHeaderFooterView.Type, reuse_id:String)
-}
-
-public enum CellTableCreateType
-{
-    case nib(nib_name:String, reuse_id:String)
-    case code(type:UITableViewCell.Type, reuse_id:String)
-}

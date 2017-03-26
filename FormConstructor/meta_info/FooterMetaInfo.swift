@@ -11,6 +11,6 @@ import UIKit
 
 public struct FooterMetaInfo
 {
-    public var create_type:FooterSectionCreateType?
+    public var create_type:TypeCreate<UITableViewHeaderFooterView.Type>?
     public var height:CGFloat;
 }

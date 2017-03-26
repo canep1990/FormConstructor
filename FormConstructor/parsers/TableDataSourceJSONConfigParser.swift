@@ -170,7 +170,7 @@ public class TableDataSourceJSONConfigParser
                 
                 if nib_name_cell != nil && reuse_id != nil
                 {
-                    cell_meta_info = CellMetaInfo(create_type: CellTableCreateType.nib(nib_name: nib_name_cell!, reuse_id: reuse_id!), height:height_cell);
+                    //cell_meta_info = CellMetaInfo(create_type: CellTableCreateType.nib(nib_name: nib_name_cell!, reuse_id: reuse_id!), height:height_cell);
                 }
             }
         }

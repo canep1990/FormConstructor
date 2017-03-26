@@ -13,9 +13,8 @@ public class FormConstructor: NSObject,   UITableViewDataSource, UITableViewDele
 {
     private(set) var dataSource:FormConstructorDataSource!;
     private(set) var uiConfigurator:FormConstructorUIConfigurator!;
-
     
-    private let _table_container:TableContainer = TableContainer(threadsafe: false);
+    private let tableContainer:TableContainer = TableContainer(threadsafe: false);
     
     private override init() {
         
@@ -44,134 +43,89 @@ public class FormConstructor: NSObject,   UITableViewDataSource, UITableViewDele
             let section_type = self.dataSource!.sectionType(index: indexSection);
             let section:Section = self.createSection(type: section_type, sortKey:  String(describing:indexSection));
             
-            section.header = self.createHeader(sectionMetaInfo: section.meta_info);
-            section.footer = self.createFooter(sectionMetaInfo: section.meta_info);
+            section.header = self.createHeader(sectionType: section.type);
+            section.footer = self.createFooter(sectionType: section.type);
             
             for indexRow in 0..<self.dataSource!.countRows(sectionType: section_type)
             {
                 let rowType:String = self.dataSource!.rowType(index: indexRow, sectionType: section_type);
                 
-                let row:Row = self.createRow(type: rowType, sortKey: String(describing:indexRow))
+                let row:Row = self.createRow(type: rowType, sortKey: String(describing:indexRow), cell:self.createCell(sectionType: section_type, rowType: rowType))
                 
                 section.add(item: row);
             }
             
-            self._table_container.add(item: section);
+            self.tableContainer.add(item: section);
         }
         
     }
     
     func createSection(type:String, sortKey:String) -> Section
     {
-        let meta_info_section:MetaInfoItem = MetaInfoItem(id:String(describing: type), sort_key:sortKey, type:type);
-        let section:Section = Section(meta_info: meta_info_section, header: nil, footer: nil)
-        
+        let section:Section = Section(id:String(describing: type), sortKey:sortKey, type:type)
         return section;
     }
   
-    
-    
-    func createRow(type:String, sortKey:String) -> Row
+    func createRow(type:String, sortKey:String, cell:Cell) -> Row
     {
-        let meta_info_row:MetaInfoItem = MetaInfoItem(id:String(describing: type), sort_key:sortKey, type:type);
-        let row = Row(meta_info: meta_info_row)
-        
+        let row = Row(id:String(describing: type), sortKey:sortKey, type:type, cell:cell)
         return row;
     }
     
-    func createHeader( sectionMetaInfo:MetaInfoItem) -> Header?
+    func createHeader( sectionType:String) -> Header?
     {
         var header:Header?;
         
-        if sectionMetaInfo.type != nil
-        {
-            let type_create_header:HeaderSectionCreateType? =  self.uiConfigurator.typeCreateHeader(sectionType: sectionMetaInfo.type!);
-            
-            guard type_create_header != nil else {
-                return nil;
-            }
-            
-            switch type_create_header!
-            {
-            case let .nib(nib_name, reuse_id):
-                header = Header(nib_name: nib_name, reuse_id: reuse_id);
-                break
-                
-            case let .code(type, reuse_id):
-                header = Header(type: type, reuse_id: reuse_id);
-                break;
-            }
-            
-            header?.height = self.uiConfigurator.heightHeader(sectionType: sectionMetaInfo.type!);
+        let create_type:TypeCreate<UITableViewHeaderFooterView.Type>? =  self.uiConfigurator.typeCreateHeader(sectionType: sectionType);
+        
+        guard create_type != nil else {
+            return nil;
         }
+        
+        header = Header(typeCreate: create_type!);
+        header?.height = self.uiConfigurator.heightHeader(sectionType: sectionType);
+        
         return header;
     }
     
-    func createFooter(sectionMetaInfo:MetaInfoItem) -> Footer?
+    func createFooter(sectionType:String) -> Footer?
     {
- 
         var footer:Footer?;
         
-        if sectionMetaInfo.type != nil
-        {
-            let type_create_footer:FooterSectionCreateType? = self.uiConfigurator.typeCreateFooter(sectionType: sectionMetaInfo.type!);
-            
-            
-            guard type_create_footer != nil else {
-                return nil;
-            }
-            
-            switch type_create_footer!
-            {
-            case let .nib(nib_name, reuse_id):
-                footer = Footer(nib_name: nib_name, reuse_id: reuse_id);
-                break
-                
-            case let .code(type, reuse_id):
-                footer = Footer(type: type, reuse_id: reuse_id);
-                break;
-            }
-            footer?.height = self.uiConfigurator.heightFooter(sectionType: sectionMetaInfo.type!);
+        let create_type:TypeCreate<UITableViewHeaderFooterView.Type>? = self.uiConfigurator.typeCreateFooter(sectionType: sectionType);
+        
+        guard create_type != nil else {
+            return nil;
         }
+        
+        footer = Footer(typeCreate: create_type!);
+        footer?.height = self.uiConfigurator.heightFooter(sectionType: sectionType);
         
         return footer;
     }
     
-    func createCellRow(section_type:String, row:inout Row)
+    func createCell(sectionType:String, rowType:String) -> Cell
     {
-        var cell:Cell?;
+        let typeCreate = self.uiConfigurator.typeCreateCell(rowType: rowType, sectionType: sectionType);
+        let cell:Cell = Cell(typeCreate:typeCreate);
         
-        if row.meta_info.type != nil
-        {
-            let type_create_cell: CellTableCreateType = self.uiConfigurator.typeCreateCell(rowType: row.meta_info.type!, sectionType: section_type)
-            
-             switch type_create_cell
-            {
-                case let .nib(nib_name, reuse_id):
-                    cell = Cell(nib_name: nib_name, reuse_id: reuse_id);
-                    break
-                
-                case let .code(type, reuse_id):
-                    cell = Cell(type: type, reuse_id: reuse_id);
-                    break;
-            }
-            cell?.height = self.uiConfigurator.heightCell(sectionType: section_type, rowType: row.meta_info.type!);
-            row.cell = cell;
-        }
+        cell.height = self.uiConfigurator.heightCell(sectionType: sectionType, rowType: rowType);
+        
+        return cell;
     }
     
-    
+
     //MARK: UITableViewDataSource
     public func numberOfSections(in tableView: UITableView) -> Int
     {
-        let countSections = self._table_container.count()
+        let countSections = self.tableContainer.count()
         return countSections;
     }
     
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        let currentSection:Section? = self._table_container.item(index: section);
+        let currentSection:Section? = self.tableContainer.item(index: section);
 
         if currentSection != nil{
             return currentSection!.count();
@@ -184,33 +138,34 @@ public class FormConstructor: NSObject,   UITableViewDataSource, UITableViewDele
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let section = self._table_container.item(index:indexPath.section)
+        let section = self.tableContainer.item(index:indexPath.section)
         let row = section!.item(index:indexPath.row)!
-        var cell_view:UITableViewCell? = nil;
+        var tableCell:UITableViewCell? = nil;
         
-        if row.cell != nil && row.cell?.register_info() != nil
-        {
-            let type:TypeRegistration = (row.cell!.register_info()!.type())
-            cell_view = tableView.dequeAndRegisterCell(type: type)!;
-        }
-        else
-        {
-            
-        }
+        tableCell = tableView.dequeAndRegisterCell(type: row.cell.typeCreate)!;
         
-        self.uiConfigurator.configureCell(cell: cell_view!, value: nil);
+        self.uiConfigurator.configureCell(cell: tableCell!, value: row.model);
         
-        return cell_view!;
+        return tableCell!;
     }
     
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100;
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        let section = self.tableContainer.item(index:indexPath.section)
+        let row = section!.item(index:indexPath.row)!
+        
+        if row.cell.height != nil{
+            return row.cell.height!;
+        }
+        else{
+            return 0;
+        }
     }
     
     
     private func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
-        let currentSection:Section = self._table_container.item(index:section)!
+        let currentSection:Section = self.tableContainer.item(index:section)!
         
         if currentSection.header != nil && currentSection.header!.height != nil {
             return currentSection.header!.height!;
@@ -222,7 +177,7 @@ public class FormConstructor: NSObject,   UITableViewDataSource, UITableViewDele
     
     private func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
     {
-        let currentSection:Section = self._table_container.item(index:section)!
+        let currentSection:Section = self.tableContainer.item(index:section)!
         
         if currentSection.footer != nil && currentSection.footer!.height != nil {
             return currentSection.footer!.height!;
@@ -234,7 +189,7 @@ public class FormConstructor: NSObject,   UITableViewDataSource, UITableViewDele
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        let currentSection:Section = self._table_container.item(index:section)!
+        let currentSection:Section = self.tableContainer.item(index:section)!
         
         if currentSection.header != nil {
             return currentSection.header!.title;
@@ -247,12 +202,12 @@ public class FormConstructor: NSObject,   UITableViewDataSource, UITableViewDele
     //MARK: UITableViewDelegate
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?
     {
-        let current_section:Section = self._table_container.item(index:section)!
+        let current_section:Section = self.tableContainer.item(index:section)!
         let footer = current_section.footer;
         var footer_view:UIView?;
         
-        if  footer != nil && footer?.register_info() != nil{
-            footer_view = tableView.dequeAndRegisterHeaderFooter(type: footer!.register_info()!.type());
+        if  footer != nil && footer?.typeCreate != nil{
+            footer_view = tableView.dequeAndRegisterHeaderFooter(type: footer!.typeCreate);
         }
         
         return footer_view;
@@ -260,12 +215,12 @@ public class FormConstructor: NSObject,   UITableViewDataSource, UITableViewDele
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        let current_section:Section = self._table_container.item(index:section)!
+        let current_section:Section = self.tableContainer.item(index:section)!
         let header = current_section.header;
         var header_view:UIView?;
         
-        if header != nil && header?.register_info() != nil{
-            header_view = tableView.dequeAndRegisterHeaderFooter(type: (header!.register_info()?.type())!);
+        if header != nil && header?.typeCreate != nil{
+            header_view = tableView.dequeAndRegisterHeaderFooter(type: header!.typeCreate);
         }
         
         return header_view;

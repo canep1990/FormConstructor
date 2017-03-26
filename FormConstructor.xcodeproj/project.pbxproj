@@ -29,13 +29,11 @@
 		FF343B611E8725CF0047A996 /* IContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B551E8725CF0047A996 /* IContainer.swift */; };
 		FF343B621E8725CF0047A996 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B561E8725CF0047A996 /* Footer.swift */; };
 		FF343B631E8725CF0047A996 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B571E8725CF0047A996 /* Header.swift */; };
-		FF343B641E8725CF0047A996 /* MetaInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B591E8725CF0047A996 /* MetaInfoItem.swift */; };
-		FF343B651E8725CF0047A996 /* RegisterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5A1E8725CF0047A996 /* RegisterInfo.swift */; };
-		FF343B661E8725CF0047A996 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5B1E8725CF0047A996 /* Model.swift */; };
 		FF343B671E8725CF0047A996 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5C1E8725CF0047A996 /* Row.swift */; };
 		FF343B681E8725CF0047A996 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5D1E8725CF0047A996 /* Section.swift */; };
 		FF343B691E8725CF0047A996 /* TableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B5E1E8725CF0047A996 /* TableContainer.swift */; };
 		FF343B6B1E8726050047A996 /* FormConstructor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FF343B6A1E8726050047A996 /* FormConstructor.podspec */; };
+		FF343B6D1E87677C0047A996 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B6C1E87677C0047A996 /* Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,13 +72,11 @@
 		FF343B551E8725CF0047A996 /* IContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IContainer.swift; sourceTree = "<group>"; };
 		FF343B561E8725CF0047A996 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		FF343B571E8725CF0047A996 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		FF343B591E8725CF0047A996 /* MetaInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaInfoItem.swift; sourceTree = "<group>"; };
-		FF343B5A1E8725CF0047A996 /* RegisterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInfo.swift; sourceTree = "<group>"; };
-		FF343B5B1E8725CF0047A996 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FF343B5C1E8725CF0047A996 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		FF343B5D1E8725CF0047A996 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		FF343B5E1E8725CF0047A996 /* TableContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableContainer.swift; sourceTree = "<group>"; };
 		FF343B6A1E8726050047A996 /* FormConstructor.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FormConstructor.podspec; sourceTree = "<group>"; };
+		FF343B6C1E87677C0047A996 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,12 +177,11 @@
 		FF343B511E8725CF0047A996 /* TableContainer */ = {
 			isa = PBXGroup;
 			children = (
+				FF343B6C1E87677C0047A996 /* Types.swift */,
 				FF343B521E8725CF0047A996 /* Cell.swift */,
 				FF343B531E8725CF0047A996 /* container */,
 				FF343B561E8725CF0047A996 /* Footer.swift */,
 				FF343B571E8725CF0047A996 /* Header.swift */,
-				FF343B581E8725CF0047A996 /* metaInfo */,
-				FF343B5B1E8725CF0047A996 /* Model.swift */,
 				FF343B5C1E8725CF0047A996 /* Row.swift */,
 				FF343B5D1E8725CF0047A996 /* Section.swift */,
 				FF343B5E1E8725CF0047A996 /* TableContainer.swift */,
@@ -202,15 +197,6 @@
 				FF343B551E8725CF0047A996 /* IContainer.swift */,
 			);
 			path = container;
-			sourceTree = "<group>";
-		};
-		FF343B581E8725CF0047A996 /* metaInfo */ = {
-			isa = PBXGroup;
-			children = (
-				FF343B591E8725CF0047A996 /* MetaInfoItem.swift */,
-				FF343B5A1E8725CF0047A996 /* RegisterInfo.swift */,
-			);
-			path = metaInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,13 +318,12 @@
 				FF343B4C1E86BF5A0047A996 /* TableDataSourceJSONConfigParser.swift in Sources */,
 				FF343B601E8725CF0047A996 /* ContainerTemplate.swift in Sources */,
 				FF343B491E86BF5A0047A996 /* HeaderMetaInfo.swift in Sources */,
-				FF343B651E8725CF0047A996 /* RegisterInfo.swift in Sources */,
 				FF343B5F1E8725CF0047A996 /* Cell.swift in Sources */,
 				FF343B691E8725CF0047A996 /* TableContainer.swift in Sources */,
 				FF343B501E86BF5A0047A996 /* UITableView+Register.swift in Sources */,
-				FF343B641E8725CF0047A996 /* MetaInfoItem.swift in Sources */,
 				FF343B461E86BF5A0047A996 /* FormCostructorDataSource.swift in Sources */,
 				FF343B471E86BF5A0047A996 /* CellMetaInfo.swift in Sources */,
+				FF343B6D1E87677C0047A996 /* Types.swift in Sources */,
 				FF343B451E86BF5A0047A996 /* FormConstructorUIConfigurator.swift in Sources */,
 				FF343B441E86BF5A0047A996 /* FormConstructorTypes.swift in Sources */,
 				FF343B4B1E86BF5A0047A996 /* SectionMetaInfo.swift in Sources */,
@@ -348,7 +333,6 @@
 				FF343B671E8725CF0047A996 /* Row.swift in Sources */,
 				FF343B4A1E86BF5A0047A996 /* RowMetaInfo.swift in Sources */,
 				FF343B4F1E86BF5A0047A996 /* TableDataSourceTemplate.swift in Sources */,
-				FF343B661E8725CF0047A996 /* Model.swift in Sources */,
 				FF343B681E8725CF0047A996 /* Section.swift in Sources */,
 				FF343B4E1E86BF5A0047A996 /* TableDataSourceJSONTemplate.swift in Sources */,
 				FF343B611E8725CF0047A996 /* IContainer.swift in Sources */,

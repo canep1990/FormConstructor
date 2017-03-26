@@ -54,7 +54,7 @@ open class TableDataSourceJSONTemplate : TableDataSourceDynamicTemplate
     
     }
     
-    public func typeCreateCell(rowType: String, sectionType: String) -> CellTableCreateType
+    public func typeCreateCell(rowType: String, sectionType: String) -> TypeCreate<UITableViewCell.Type>
     {
         let section = self.sections.section(type: sectionType);
         let row = section!.rows.row(type: rowType);
@@ -102,7 +102,7 @@ open class TableDataSourceJSONTemplate : TableDataSourceDynamicTemplate
         }
     }
     
-    public func typeCreateHeader(sectionType: String) -> HeaderSectionCreateType?
+    public func typeCreateHeader(sectionType: String) -> TypeCreate<UITableViewHeaderFooterView.Type>?
     {
         let section = self.sections.section(type: sectionType);
         
@@ -128,7 +128,7 @@ open class TableDataSourceJSONTemplate : TableDataSourceDynamicTemplate
         }
     }
     
-    public func typeCreateFooter(sectionType: String) -> FooterSectionCreateType?
+    public func typeCreateFooter(sectionType: String) -> TypeCreate<UITableViewHeaderFooterView.Type>?
     {
         let section = self.sections.section(type: sectionType);
         

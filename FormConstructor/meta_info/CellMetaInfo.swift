@@ -12,10 +12,10 @@ import UIKit
 
 public struct CellMetaInfo
 {
-    public var create_type:CellTableCreateType
+    public var create_type:TypeCreate<UITableViewCell.Type>
     public var height:CGFloat? = nil;
     
-    init (create_type:CellTableCreateType, height:CGFloat? = nil){
+    init (create_type:TypeCreate<UITableViewCell.Type>, height:CGFloat? = nil){
         self.create_type = create_type;
         self.height = height;
     }

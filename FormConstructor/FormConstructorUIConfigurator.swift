@@ -12,13 +12,13 @@ import UIKit
 public protocol FormConstructorUIConfigurator
 {
     func configureCell(cell:UITableViewCell, value:AnyObject?);
-    func typeCreateCell(rowType: String, sectionType: String) -> CellTableCreateType;
+    func typeCreateCell(rowType: String, sectionType: String) -> TypeCreate<UITableViewCell.Type>
     func heightCell(sectionType:String, rowType:String) -> CGFloat;
     
     func heightHeader(sectionType:String) -> CGFloat;
     func titleHeader(sectionType:String) -> String?;
-    func typeCreateHeader(sectionType: String) -> HeaderSectionCreateType?;
+    func typeCreateHeader(sectionType: String) -> TypeCreate<UITableViewHeaderFooterView.Type>?
     
     func heightFooter(sectionType:String) -> CGFloat;
-    func typeCreateFooter(sectionType: String) -> FooterSectionCreateType?;
+    func typeCreateFooter(sectionType: String) -> TypeCreate<UITableViewHeaderFooterView.Type>?
 }

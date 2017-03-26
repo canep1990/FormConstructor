@@ -32,14 +32,14 @@ extension UITableView
     }
     
     
-    
-    func dequeAndRegisterCell(type:TypeRegistration<UITableViewCell.Type>) -> UITableViewCell?
+
+    func dequeAndRegisterCell(type:TypeCreate<UITableViewCell.Type>) -> UITableViewCell?
     {
         var cell:UITableViewCell?;
         
         switch type
         {
-        case let .nib(nib_name, reuse_id):
+        case let .loadFromNib(nib_name, reuse_id):
             cell = self.dequeueReusableCell(withIdentifier: reuse_id);
             
             if cell == nil {
@@ -51,7 +51,7 @@ extension UITableView
             break;
             
             
-        case let .code(type, reuse_id):
+        case let .build(type, reuse_id):
             cell = self.dequeueReusableCell(withIdentifier: reuse_id);
             
             if cell == nil{
@@ -67,13 +67,13 @@ extension UITableView
     }
     
     
-    func dequeAndRegisterHeaderFooter(type:TypeRegistration<UITableViewHeaderFooterView.Type>) -> UITableViewHeaderFooterView?
+    func dequeAndRegisterHeaderFooter(type:TypeCreate<UITableViewHeaderFooterView.Type>) -> UITableViewHeaderFooterView?
     {
         var header_footer:UITableViewHeaderFooterView?;
         
         switch type
         {
-        case let .nib(nib_name, reuse_id):
+        case let .loadFromNib(nib_name, reuse_id):
             header_footer = self.dequeueReusableHeaderFooterView(withIdentifier: reuse_id);
             
             if header_footer == nil {
@@ -85,7 +85,7 @@ extension UITableView
             break;
             
             
-        case let .code(type, reuse_id):
+        case let .build(type, reuse_id):
              header_footer = self.dequeueReusableHeaderFooterView(withIdentifier: reuse_id);
             
             if header_footer == nil{
