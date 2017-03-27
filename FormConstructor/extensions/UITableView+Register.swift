@@ -1,7 +1,4 @@
-//
-//  UITableView+RegistelCell.swift
-//  WriteMe
-//
+
 //  Created by Alexey Ivankov on 29.11.16.
 //  Copyright © 2016 Alexey Ivankov. All rights reserved.
 //
@@ -33,7 +30,7 @@ extension UITableView
     
     
 
-    func dequeAndRegisterCell(type:TypeCreate<UITableViewCell.Type>) -> UITableViewCell?
+    func dequeAndRegisterCell(type:BuildType) -> UITableViewCell?
     {
         var cell:UITableViewCell?;
         
@@ -54,8 +51,8 @@ extension UITableView
         case let .build(type, reuse_id):
             cell = self.dequeueReusableCell(withIdentifier: reuse_id);
             
-            if cell == nil{
-                self.registerCell(type: type, reuse_id: reuse_id);
+            if cell == nil && type.value is UITableViewCell.Type {
+                self.registerCell(type: type.value as! UITableViewCell.Type, reuse_id: reuse_id);
             }
             
             cell = self.dequeueReusableCell(withIdentifier: reuse_id);
@@ -67,7 +64,7 @@ extension UITableView
     }
     
     
-    func dequeAndRegisterHeaderFooter(type:TypeCreate<UITableViewHeaderFooterView.Type>) -> UITableViewHeaderFooterView?
+    func dequeAndRegisterHeaderFooter(type:BuildType) -> UITableViewHeaderFooterView?
     {
         var header_footer:UITableViewHeaderFooterView?;
         
@@ -88,8 +85,8 @@ extension UITableView
         case let .build(type, reuse_id):
              header_footer = self.dequeueReusableHeaderFooterView(withIdentifier: reuse_id);
             
-            if header_footer == nil{
-                self.registerHeaderFooter(type: type, reuse_id: reuse_id);
+            if header_footer == nil && type.value is UITableViewHeaderFooterView.Type{
+                self.registerHeaderFooter(type: type.value as! UITableViewHeaderFooterView.Type, reuse_id: reuse_id);
             }
              
              header_footer = self.dequeueReusableHeaderFooterView(withIdentifier: reuse_id);
