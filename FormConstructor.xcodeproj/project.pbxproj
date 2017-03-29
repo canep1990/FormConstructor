@@ -22,17 +22,17 @@
 		FF343B931E8982100047A996 /* FooterBuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B901E8982100047A996 /* FooterBuildInfo.swift */; };
 		FF343B941E8982100047A996 /* HeaderBuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B911E8982100047A996 /* HeaderBuildInfo.swift */; };
 		FF343B9C1E899CA60047A996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B9B1E899CA60047A996 /* AppDelegate.swift */; };
-		FF343B9E1E899CA60047A996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343B9D1E899CA60047A996 /* ViewController.swift */; };
 		FF343BA11E899CA60047A996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF343B9F1E899CA60047A996 /* Main.storyboard */; };
 		FF343BA31E899CA60047A996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF343BA21E899CA60047A996 /* Assets.xcassets */; };
 		FF343BA61E899CA60047A996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF343BA41E899CA60047A996 /* LaunchScreen.storyboard */; };
 		FF343BB11E899CA60047A996 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343BB01E899CA60047A996 /* ExampleTests.swift */; };
 		FF343BBC1E899CA60047A996 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343BBB1E899CA60047A996 /* ExampleUITests.swift */; };
 		FF343BC91E89A06A0047A996 /* BuildType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343BC81E89A06A0047A996 /* BuildType.swift */; };
-		FF343BCB1E89A07C0047A996 /* TypeWraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343BCA1E89A07C0047A996 /* TypeWraper.swift */; };
 		FF343BD21E89A3180047A996 /* ParseJsonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343BCD1E89A3180047A996 /* ParseJsonError.swift */; };
 		FF343BD41E89A3180047A996 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343BD11E89A3180047A996 /* UITableView+Register.swift */; };
 		FF343BD61E89A3C50047A996 /* IJsonTableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF343BD51E89A3C50047A996 /* IJsonTableContainer.swift */; };
+		FF7B8A741E8C07E00033F2D8 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B8A731E8C07E00033F2D8 /* FormViewController.swift */; };
+		FF7B8A771E8C4F9B0033F2D8 /* IContainerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B8A751E8C4F820033F2D8 /* IContainerItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,6 @@
 		FF343B911E8982100047A996 /* HeaderBuildInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderBuildInfo.swift; sourceTree = "<group>"; };
 		FF343B991E899CA60047A996 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF343B9B1E899CA60047A996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF343B9D1E899CA60047A996 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF343BA01E899CA60047A996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF343BA21E899CA60047A996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF343BA51E899CA60047A996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,10 +90,11 @@
 		FF343BBB1E899CA60047A996 /* ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		FF343BBD1E899CA60047A996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF343BC81E89A06A0047A996 /* BuildType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildType.swift; sourceTree = "<group>"; };
-		FF343BCA1E89A07C0047A996 /* TypeWraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeWraper.swift; sourceTree = "<group>"; };
 		FF343BCD1E89A3180047A996 /* ParseJsonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseJsonError.swift; sourceTree = "<group>"; };
 		FF343BD11E89A3180047A996 /* UITableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
 		FF343BD51E89A3C50047A996 /* IJsonTableContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJsonTableContainer.swift; sourceTree = "<group>"; };
+		FF7B8A731E8C07E00033F2D8 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		FF7B8A751E8C4F820033F2D8 /* IContainerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IContainerItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +204,7 @@
 			children = (
 				FF343B541E8725CF0047A996 /* ContainerTemplate.swift */,
 				FF343B551E8725CF0047A996 /* IContainer.swift */,
+				FF7B8A751E8C4F820033F2D8 /* IContainerItem.swift */,
 			);
 			path = container;
 			sourceTree = "<group>";
@@ -222,11 +223,11 @@
 			isa = PBXGroup;
 			children = (
 				FF343B9B1E899CA60047A996 /* AppDelegate.swift */,
-				FF343B9D1E899CA60047A996 /* ViewController.swift */,
 				FF343B9F1E899CA60047A996 /* Main.storyboard */,
 				FF343BA21E899CA60047A996 /* Assets.xcassets */,
 				FF343BA41E899CA60047A996 /* LaunchScreen.storyboard */,
 				FF343BA71E899CA60047A996 /* Info.plist */,
+				FF7B8A731E8C07E00033F2D8 /* FormViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -253,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				FF343BC81E89A06A0047A996 /* BuildType.swift */,
-				FF343BCA1E89A07C0047A996 /* TypeWraper.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -497,10 +497,10 @@
 				FF343B451E86BF5A0047A996 /* FormConstructorDataSource.swift in Sources */,
 				FF343B431E86BF5A0047A996 /* FormConstructor.swift in Sources */,
 				FF343BD41E89A3180047A996 /* UITableView+Register.swift in Sources */,
-				FF343BCB1E89A07C0047A996 /* TypeWraper.swift in Sources */,
 				FF343B671E8725CF0047A996 /* Row.swift in Sources */,
 				FF343B941E8982100047A996 /* HeaderBuildInfo.swift in Sources */,
 				FF343B681E8725CF0047A996 /* Section.swift in Sources */,
+				FF7B8A771E8C4F9B0033F2D8 /* IContainerItem.swift in Sources */,
 				FF343B611E8725CF0047A996 /* IContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,7 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF343B9E1E899CA60047A996 /* ViewController.swift in Sources */,
+				FF7B8A741E8C07E00033F2D8 /* FormViewController.swift in Sources */,
 				FF343B9C1E899CA60047A996 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -847,6 +847,7 @@
 				FF343B2E1E86BF0D0047A996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF343B2F1E86BF0D0047A996 /* Build configuration list for PBXNativeTarget "FormConstructorTests" */ = {
 			isa = XCConfigurationList;
@@ -855,6 +856,7 @@
 				FF343B311E86BF0D0047A996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF343BBE1E899CA60047A996 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
@@ -863,6 +865,7 @@
 				FF343BC01E899CA60047A996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF343BC11E899CA60047A996 /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -871,6 +874,7 @@
 				FF343BC31E899CA60047A996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF343BC41E899CA60047A996 /* Build configuration list for PBXNativeTarget "ExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -879,6 +883,7 @@
 				FF343BC61E899CA60047A996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

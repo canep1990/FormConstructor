@@ -51,8 +51,8 @@ extension UITableView
         case let .build(type, reuse_id):
             cell = self.dequeueReusableCell(withIdentifier: reuse_id);
             
-            if cell == nil && type.value is UITableViewCell.Type {
-                self.registerCell(type: type.value as! UITableViewCell.Type, reuse_id: reuse_id);
+            if cell == nil && type is UITableViewCell.Type {
+                self.registerCell(type: type as! UITableViewCell.Type, reuse_id: reuse_id);
             }
             
             cell = self.dequeueReusableCell(withIdentifier: reuse_id);
@@ -85,8 +85,8 @@ extension UITableView
         case let .build(type, reuse_id):
              header_footer = self.dequeueReusableHeaderFooterView(withIdentifier: reuse_id);
             
-            if header_footer == nil && type.value is UITableViewHeaderFooterView.Type{
-                self.registerHeaderFooter(type: type.value as! UITableViewHeaderFooterView.Type, reuse_id: reuse_id);
+            if header_footer == nil && type is UITableViewHeaderFooterView.Type{
+                self.registerHeaderFooter(type: type as! UITableViewHeaderFooterView.Type, reuse_id: reuse_id);
             }
              
              header_footer = self.dequeueReusableHeaderFooterView(withIdentifier: reuse_id);

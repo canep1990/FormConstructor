@@ -13,4 +13,11 @@ public struct CellBuildInfo
 {
     let buildType:BuildType;
     var height:CGFloat?;
+    
+    public init(buildType:BuildType, height:CGFloat? = nil)
+    {
+        self.buildType = buildType;
+        self.height = height;
+    }
+
 }
