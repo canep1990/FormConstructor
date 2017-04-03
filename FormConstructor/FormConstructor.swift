@@ -35,7 +35,7 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        let currentSection:Section? = self.tableContainer.item(index: section);
+        let currentSection:Section? = self.tableContainer.item(index: section) as? Section;
 
         if currentSection != nil{
             return currentSection!.count();
@@ -48,14 +48,14 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let section = self.tableContainer.item(index:indexPath.section)
-        let row = section!.item(index:indexPath.row)!
+        let section:Section = self.tableContainer.item(index:indexPath.section) as! Section
+        let row = section.item(index:indexPath.row)!
         
-        let cellBuildInfo = self.dataSource.cellBuildInfo(row: row, section: section!);
+        ///let cellBuildInfo = self.dataSource.cellBuildInfo(row: row, section: section!);
         
         var tableCell:UITableViewCell? = nil;
         
-        tableCell = tableView.dequeAndRegisterCell(type: cellBuildInfo.buildType)!;
+       // tableCell = tableView.dequeAndRegisterCell(type: cellBuildInfo.buildType)!;
         
         //self.uiConfigurator.configureCell(cell: tableCell!, value: row.model);
         
@@ -64,14 +64,14 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        let section = self.tableContainer.item(index:indexPath.section)
-        let row = section!.item(index:indexPath.row)!
-        let cellBuildInfo = self.dataSource.cellBuildInfo(row: row, section: section!);
+        let section:Section = self.tableContainer.item(index:indexPath.section) as! Section
+        let row = section.item(index:indexPath.row)!
+       // let cellBuildInfo = self.dataSource.cellBuildInfo(row: row, section: section!);
         
-        let height =  cellBuildInfo.height;
+        let height =  0;//cellBuildInfo.height;
         
         if height != nil{
-            return height!;
+            return CGFloat(height);
         }
         else{
             return 0;
@@ -81,12 +81,12 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     
     private func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
-        let currentSection:Section = self.tableContainer.item(index:section)!
-        let headerBuildInfo = self.dataSource.headerBuildInfo(section:currentSection);
-        let height = headerBuildInfo?.height;
+        let currentSection:Section = self.tableContainer.item(index:section) as! Section
+        //let headerBuildInfo = self.dataSource.headerBuildInfo(section:currentSection);
+        let height:CGFloat = 0; //= headerBuildInfo?.height;
         
         if height != nil {
-            return height!;
+            return height;
         }
         else{
             return 0;
@@ -95,12 +95,12 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     
     private func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
     {
-        let currentSection:Section = self.tableContainer.item(index:section)!
-        let footerBuildInfo = self.dataSource.footerBuildInfo(section:currentSection);
-        let height = footerBuildInfo?.height;
+        let currentSection:Section = self.tableContainer.item(index:section) as! Section
+        ///let footerBuildInfo = self.dataSource.footerBuildInfo(section:currentSection);
+        let height:CGFloat = 0;  //footerBuildInfo?.height;
         
         if height != nil {
-            return height!;
+            return height;
         }
         else{
             return 0;
@@ -109,9 +109,9 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        let currentSection:Section = self.tableContainer.item(index:section)!
-        let headerBuildInfo = self.dataSource.headerBuildInfo(section: currentSection);
-        let title = headerBuildInfo?.title;
+        let currentSection:Section = self.tableContainer.item(index:section) as! Section
+       // let headerBuildInfo = self.dataSource.headerBuildInfo(section: currentSection);
+        var title:String? //= headerBuildInfo?.title;
         
         return title;
     }
@@ -119,29 +119,29 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     //MARK: UITableViewDelegate
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?
     {
-        let currentSection:Section = self.tableContainer.item(index:section)!
-        let footerBuildInfo = self.dataSource.footerBuildInfo(section: currentSection);
+        let currentSection:Section = self.tableContainer.item(index:section) as! Section
+       // let footerBuildInfo = self.dataSource.footerBuildInfo(section: currentSection);
         
-        guard  footerBuildInfo != nil else {
-            return nil;
-        }
+//        guard  footerBuildInfo != nil else {
+//            return nil;
+//        }
         
-        let footer_view:UIView? = tableView.dequeAndRegisterHeaderFooter(type: footerBuildInfo!.buildType);
+        let footer_view:UIView? = nil //= tableView.dequeAndRegisterHeaderFooter(type: footerBuildInfo!.buildType);
         
         return footer_view;
     }
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        let currentSection:Section = self.tableContainer.item(index:section)!
-        let headerBuildInfo = self.dataSource.headerBuildInfo(section: currentSection);
+        let currentSection:Section = self.tableContainer.item(index:section) as! Section
+       // let headerBuildInfo = self.dataSource.headerBuildInfo(section: currentSection);
         
 
-        guard headerBuildInfo != nil else {
-            return nil;
-        }
+//        guard headerBuildInfo != nil else {
+//            return nil;
+//        }
         
-        let header_view:UIView? = tableView.dequeAndRegisterHeaderFooter(type: headerBuildInfo!.buildType);
+        let header_view:UIView?  = nil //= tableView.dequeAndRegisterHeaderFooter(type: headerBuildInfo!.buildType);
         
         return header_view;
     }

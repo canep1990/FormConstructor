@@ -9,5 +9,5 @@
 import Foundation
 
 protocol IJsonTableContainer {
-    func parse(succes:(_ container:TableContainer)->Void, failed:(ParseJsonError));
+    //func parse(succes:(_ container:TableContainer)->Void, failed:(ParseJsonError));
 }
