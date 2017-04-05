@@ -11,7 +11,7 @@ import UIKit
 
 public protocol FormConstructorDataSource
 {
-    //func cellBuildInfo(row:Row, section:Section) -> CellBuildInfo
-    //func footerBuildInfo(section:Section) -> FooterBuildInfo?;
-    //func headerBuildInfo(section:Section) -> HeaderBuildInfo?;
+    func cellBuildInfo(row:Row, section:Section) -> CellBuildInfo
+    func footerBuildInfo(section:Section) -> FooterBuildInfo?;
+    func headerBuildInfo(section:Section) -> HeaderBuildInfo?;
 }

@@ -14,4 +14,12 @@ public struct HeaderBuildInfo
     let buildType:BuildType;
     var title:String?;
     var height:CGFloat?;
+    
+    public init(buildType:BuildType, title:String? = nil,  height:CGFloat? = nil)
+    {
+        self.buildType = buildType;
+        self.title = title;
+        self.height = height;
+    }
+
 }
