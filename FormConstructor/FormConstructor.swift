@@ -12,16 +12,19 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     
     private var tableContainer:TableContainer!;
     
+    public var delegate:FormConstructorDelegate?;
+    
     private override init() {
         
     }
     
-    public init (tableContainer:TableContainer, dataSource:FormConstructorDataSource)
+    public init (tableContainer:TableContainer, dataSource:FormConstructorDataSource, delegate:FormConstructorDelegate)
     {
         super.init();
         
         self.tableContainer = tableContainer;
         self.dataSource = dataSource;
+        self.delegate = delegate;
     }
     
 
@@ -153,5 +156,13 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
         let header_view:UIView?  = tableView.dequeAndRegisterHeaderFooter(type: headerBuildInfo!.buildType);
         
         return header_view;
+    }
+    
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        let section:Section = self.tableContainer.item(index:indexPath.section) as! Section
+        let row:Row = section.item(index:indexPath.row) as! Row
+        
+        self.delegate?.willDisplay(cell: cell, row: row, section: section);
     }
 }

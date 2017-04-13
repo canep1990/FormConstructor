@@ -15,3 +15,8 @@ public protocol FormConstructorDataSource
     func footerBuildInfo(section:Section) -> FooterBuildInfo?;
     func headerBuildInfo(section:Section) -> HeaderBuildInfo?;
 }
+
+public protocol FormConstructorDelegate
+{
+    func willDisplay(cell:UITableViewCell, row:Row, section:Section);
+}

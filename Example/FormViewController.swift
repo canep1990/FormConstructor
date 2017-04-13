@@ -53,6 +53,15 @@ class FormViewController : UIViewController, FormConstructorDataSource
         section1.add(item: Row());
         section1.add(item: Row());
         section1.add(item: Row());
+        section1.add(item: Row());
+        section1.add(item: Row());
+        
+        section1.add(item: Row());
+        section1.add(item: Row());
+        
+        section1.add(item: Row());
+        section1.add(item: Row());
+        
         
         
         let section2:Section = Section(id: TypeSection.section2.rawValue);
