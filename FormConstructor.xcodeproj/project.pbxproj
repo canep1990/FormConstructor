@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF032EC61E9F421B00FD37DD /* FormConstructorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF032EC51E9F421B00FD37DD /* FormConstructorDelegate.swift */; };
 		FF2374541E94B590001B0ACA /* TestCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2374531E94B590001B0ACA /* TestCell1.swift */; };
 		FF2374561E94B59A001B0ACA /* TestCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2374551E94B59A001B0ACA /* TestCell2.swift */; };
 		FF2374581E94B5CF001B0ACA /* TestCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2374571E94B5CF001B0ACA /* TestCell1.xib */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF032EC51E9F421B00FD37DD /* FormConstructorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormConstructorDelegate.swift; sourceTree = "<group>"; };
 		FF2374531E94B590001B0ACA /* TestCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell1.swift; sourceTree = "<group>"; };
 		FF2374551E94B59A001B0ACA /* TestCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell2.swift; sourceTree = "<group>"; };
 		FF2374571E94B5CF001B0ACA /* TestCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCell1.xib; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				FF343B341E86BF5A0047A996 /* FormConstructorDataSource.swift */,
 				FF343B1B1E86BF0D0047A996 /* FormConstructor.h */,
 				FF343B1C1E86BF0D0047A996 /* Info.plist */,
+				FF032EC51E9F421B00FD37DD /* FormConstructorDelegate.swift */,
 			);
 			path = FormConstructor;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				FF343B671E8725CF0047A996 /* Row.swift in Sources */,
 				FF343B941E8982100047A996 /* HeaderBuildInfo.swift in Sources */,
 				FF343B681E8725CF0047A996 /* Section.swift in Sources */,
+				FF032EC61E9F421B00FD37DD /* FormConstructorDelegate.swift in Sources */,
 				FF7B8A771E8C4F9B0033F2D8 /* IContainerItem.swift in Sources */,
 				FF343B611E8725CF0047A996 /* IContainer.swift in Sources */,
 			);
