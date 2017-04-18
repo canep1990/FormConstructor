@@ -60,8 +60,6 @@ public class TableFormDataSource: NSObject, UITableViewDataSource, UITableViewDe
         
         tableCell = tableView.dequeAndRegisterCell(type: cellBuildInfo.buildType)!;
         
-        //self.uiConfigurator.configureCell(cell: tableCell!, value: row.model);
-        
         return tableCell!;
     }
     
