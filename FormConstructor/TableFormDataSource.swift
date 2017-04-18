@@ -6,25 +6,25 @@
 import Foundation
 import UIKit
 
-public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelegate
+public class TableFormDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
 {
-    private(set) var dataSource:FormConstructorDataSource!;
+    private(set) var buildInfo:TableFormBuildInfo!;
     
     private var tableContainer:TableContainer!;
     
-    public var delegate:FormConstructorDelegate?;
+    public var configure:TableFormConfigure?;
     
     private override init() {
         
     }
     
-    public init (tableContainer:TableContainer, dataSource:FormConstructorDataSource, delegate:FormConstructorDelegate)
+    public init (tableContainer:TableContainer, buildInfo:TableFormBuildInfo, configure:TableFormConfigure? = nil)
     {
         super.init();
         
         self.tableContainer = tableContainer;
-        self.dataSource = dataSource;
-        self.delegate = delegate;
+        self.buildInfo = buildInfo;
+        self.configure = configure;
     }
     
 
@@ -54,7 +54,7 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
         let section:Section = self.tableContainer.item(index:indexPath.section) as! Section
         let row:Row = section.item(index:indexPath.row) as! Row
         
-        let cellBuildInfo = self.dataSource.cellBuildInfo(row: row, section: section);
+        let cellBuildInfo = self.buildInfo.cellBuildInfo(row: row, section: section);
         
         var tableCell:UITableViewCell? = nil;
         
@@ -69,7 +69,7 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     {
         let section:Section = self.tableContainer.item(index:indexPath.section) as! Section
         let row:Row = section.item(index:indexPath.row) as! Row
-        let cellBuildInfo = self.dataSource.cellBuildInfo(row: row, section: section);
+        let cellBuildInfo = self.buildInfo.cellBuildInfo(row: row, section: section);
         
         let height = cellBuildInfo.height;
         
@@ -85,7 +85,7 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     private func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
         let currentSection:Section = self.tableContainer.item(index:section) as! Section
-        let headerBuildInfo = self.dataSource.headerBuildInfo(section:currentSection);
+        let headerBuildInfo = self.buildInfo.headerBuildInfo(section:currentSection);
         
         guard headerBuildInfo != nil else {
             return 0;
@@ -104,7 +104,7 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     private func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
     {
         let currentSection:Section = self.tableContainer.item(index:section) as! Section
-        let footerBuildInfo = self.dataSource.footerBuildInfo(section:currentSection);
+        let footerBuildInfo = self.buildInfo.footerBuildInfo(section:currentSection);
         
         guard footerBuildInfo != nil else {
             return 0;
@@ -123,7 +123,7 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
         let currentSection:Section = self.tableContainer.item(index:section) as! Section
-        let headerBuildInfo = self.dataSource.headerBuildInfo(section: currentSection);
+        let headerBuildInfo = self.buildInfo.headerBuildInfo(section: currentSection);
         let title:String? = headerBuildInfo?.title;
         
         return title;
@@ -133,7 +133,7 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?
     {
         let currentSection:Section = self.tableContainer.item(index:section) as! Section
-        let footerBuildInfo = self.dataSource.footerBuildInfo(section: currentSection);
+        let footerBuildInfo = self.buildInfo.footerBuildInfo(section: currentSection);
         
         guard  footerBuildInfo != nil else {
             return nil;
@@ -147,7 +147,7 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
         let currentSection:Section = self.tableContainer.item(index:section) as! Section
-        let headerBuildInfo = self.dataSource.headerBuildInfo(section: currentSection);
+        let headerBuildInfo = self.buildInfo.headerBuildInfo(section: currentSection);
     
         guard headerBuildInfo != nil else {
             return nil;
@@ -163,6 +163,6 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
         let section:Section = self.tableContainer.item(index:indexPath.section) as! Section
         let row:Row = section.item(index:indexPath.row) as! Row
         
-        self.delegate?.willDisplay(cell: cell, row: row, section: section);
+        self.configure?.willDisplay(cell: cell, row: row, section: section);
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol FormConstructorDataSource
+public protocol TableFormBuildInfo
 {
     func cellBuildInfo(row:Row, section:Section) -> CellBuildInfo
     func footerBuildInfo(section:Section) -> FooterBuildInfo?;

@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-public protocol FormConstructorDelegate
+public protocol TableFormConfigure
 {
     func willDisplay(cell:UITableViewCell, row:Row, section:Section);
 }
