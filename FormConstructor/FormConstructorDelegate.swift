@@ -11,4 +11,5 @@ import Foundation
 public protocol FormConstructorDelegate
 {
     func willDisplay(cell:UITableViewCell, row:Row, section:Section);
+    func didSelect(row:Row, section:Section)
 }
