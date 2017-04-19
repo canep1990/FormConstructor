@@ -165,4 +165,10 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
         
         self.delegate?.willDisplay(cell: cell, row: row, section: section);
     }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section:Section = self.tableContainer.item(index:indexPath.section) as! Section
+        let row:Row = section.item(index:indexPath.row) as! Row
+        self.delegate?.didSelect(row: row, section: section)
+    }
 }
