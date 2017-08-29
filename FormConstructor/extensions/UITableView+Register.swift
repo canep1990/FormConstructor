@@ -15,8 +15,6 @@ extension UITableView
     }
     
     func registerCell(type:UITableViewCell.Type, reuse_id:String){
-        
-        
         let bundle = Bundle(for: type)
         let fileName = String(describing: type)
         let nib = UINib(nibName: fileName, bundle: bundle)
@@ -29,7 +27,6 @@ extension UITableView
         {
             self.register(type, forCellReuseIdentifier: fileName)
         }
-        
     }
 
     func registerHeaderFooter(reuseId:String, nibName:String)
