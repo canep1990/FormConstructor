@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FormConstructor
 
-class FormViewController : UIViewController, FormConstructorDataSource
+class FormViewController : UIViewController, FormConstructorDataSource, FormConstructorDelegate
 {
     enum TypeSection : Int
     {
@@ -21,7 +21,9 @@ class FormViewController : UIViewController, FormConstructorDataSource
 
     @IBOutlet var tableView:UITableView!;
     
-    private lazy var formConstructor:FormConstructor = { return FormConstructor(tableContainer: self.buildTableContainer(), dataSource: self)}()
+    private lazy var formConstructor:FormConstructor = {
+        return FormConstructor(tableContainer: self.buildTableContainer(), dataSource: self, delegate: self)
+    }()
     
     //MARK: VC Life cycle
     override func viewDidLoad() {
@@ -92,11 +94,13 @@ class FormViewController : UIViewController, FormConstructorDataSource
     {
         if section.id == TypeSection.section1.rawValue
         {
-            return CellBuildInfo(buildType: BuildType.loadFromNib(nibName: "TestCell1", reuseId: String(section.id)), height: nil)
+//            return CellBuildInfo(buildType: BuildType.loadFromNib(nibName: "TestCell1", reuseId: String(section.id)), height: nil)
+            return CellBuildInfo(buildType: BuildType.build(type: TestCell.self, reuseId: String(section.id)), height: nil)
         }
         else if section.id == TypeSection.section2.rawValue
         {
-            return CellBuildInfo(buildType: BuildType.loadFromNib(nibName: "TestCell2", reuseId: String(section.id)), height: nil)
+//            return CellBuildInfo(buildType: BuildType.loadFromNib(nibName: "TestCell2", reuseId: String(section.id)), height: nil)
+            return CellBuildInfo(buildType: BuildType.build(type: TestCell.self, reuseId: String(section.id)), height: nil)
         }
         else if section.id == TypeSection.section3.rawValue
         {
@@ -106,5 +110,14 @@ class FormViewController : UIViewController, FormConstructorDataSource
         {
             fatalError();
         }
+    }
+    
+    func willDisplay(cell: UITableViewCell, row: Row, section: Section) {
+        
+    }
+    
+    
+    func didSelect(row: Row, section: Section) {
+        
     }
 }

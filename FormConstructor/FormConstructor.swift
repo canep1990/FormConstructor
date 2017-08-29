@@ -58,7 +58,7 @@ public class FormConstructor: NSObject, UITableViewDataSource, UITableViewDelega
         
         var tableCell:UITableViewCell? = nil;
         
-        tableCell = tableView.dequeAndRegisterCell(type: cellBuildInfo.buildType)!;
+        tableCell = tableView.dequeAndRegisterCell(type: cellBuildInfo.buildType, indexPath: indexPath)
         
         //self.uiConfigurator.configureCell(cell: tableCell!, value: row.model);
         

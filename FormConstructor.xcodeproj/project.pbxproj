@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF2097451F558D7D00F68BAA /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2097431F558D7D00F68BAA /* TestCell.swift */; };
+		EF2097461F558D7D00F68BAA /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF2097441F558D7D00F68BAA /* TestCell.xib */; };
+		EF4E34B71F557E1E00CD5CEF /* FormConstructor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF343B181E86BF0D0047A996 /* FormConstructor.framework */; };
+		EF4E34B81F557E1E00CD5CEF /* FormConstructor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FF343B181E86BF0D0047A996 /* FormConstructor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF032EC61E9F421B00FD37DD /* FormConstructorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF032EC51E9F421B00FD37DD /* FormConstructorDelegate.swift */; };
 		FF2374541E94B590001B0ACA /* TestCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2374531E94B590001B0ACA /* TestCell1.swift */; };
 		FF2374561E94B59A001B0ACA /* TestCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2374551E94B59A001B0ACA /* TestCell2.swift */; };
@@ -41,6 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EF4E34B91F557E1E00CD5CEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF343B0F1E86BF0D0047A996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF343B171E86BF0D0047A996;
+			remoteInfo = FormConstructor;
+		};
 		FF343B231E86BF0D0047A996 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF343B0F1E86BF0D0047A996 /* Project object */;
@@ -64,7 +75,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EF4E34BB1F557E1E00CD5CEF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EF4E34B81F557E1E00CD5CEF /* FormConstructor.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		EF2097431F558D7D00F68BAA /* TestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		EF2097441F558D7D00F68BAA /* TestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
 		FF032EC51E9F421B00FD37DD /* FormConstructorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormConstructorDelegate.swift; sourceTree = "<group>"; };
 		FF2374531E94B590001B0ACA /* TestCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell1.swift; sourceTree = "<group>"; };
 		FF2374551E94B59A001B0ACA /* TestCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell2.swift; sourceTree = "<group>"; };
@@ -127,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4E34B71F557E1E00CD5CEF /* FormConstructor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +182,8 @@
 				FF2374551E94B59A001B0ACA /* TestCell2.swift */,
 				FF2374571E94B5CF001B0ACA /* TestCell1.xib */,
 				FF2374591E94B5D9001B0ACA /* TestCell2.xib */,
+				EF2097431F558D7D00F68BAA /* TestCell.swift */,
+				EF2097441F558D7D00F68BAA /* TestCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -355,10 +385,12 @@
 				FF343B951E899CA60047A996 /* Sources */,
 				FF343B961E899CA60047A996 /* Frameworks */,
 				FF343B971E899CA60047A996 /* Resources */,
+				EF4E34BB1F557E1E00CD5CEF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EF4E34BA1F557E1E00CD5CEF /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -488,6 +520,7 @@
 				FF343BA11E899CA60047A996 /* Main.storyboard in Resources */,
 				FF2374581E94B5CF001B0ACA /* TestCell1.xib in Resources */,
 				FF23745A1E94B5D9001B0ACA /* TestCell2.xib in Resources */,
+				EF2097461F558D7D00F68BAA /* TestCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +578,7 @@
 			files = (
 				FF2374561E94B59A001B0ACA /* TestCell2.swift in Sources */,
 				FF7B8A741E8C07E00033F2D8 /* FormViewController.swift in Sources */,
+				EF2097451F558D7D00F68BAA /* TestCell.swift in Sources */,
 				FF343B9C1E899CA60047A996 /* AppDelegate.swift in Sources */,
 				FF2374541E94B590001B0ACA /* TestCell1.swift in Sources */,
 			);
@@ -569,6 +603,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EF4E34BA1F557E1E00CD5CEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF343B171E86BF0D0047A996 /* FormConstructor */;
+			targetProxy = EF4E34B91F557E1E00CD5CEF /* PBXContainerItemProxy */;
+		};
 		FF343B241E86BF0D0047A996 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FF343B171E86BF0D0047A996 /* FormConstructor */;
@@ -775,6 +814,7 @@
 		FF343BBF1E899CA60047A996 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DC7JXK236W;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -788,6 +828,7 @@
 		FF343BC01E899CA60047A996 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DC7JXK236W;
 				INFOPLIST_FILE = Example/Info.plist;

@@ -15,7 +15,21 @@ extension UITableView
     }
     
     func registerCell(type:UITableViewCell.Type, reuse_id:String){
-        self.register(type, forCellReuseIdentifier: reuse_id);
+        
+        
+        let bundle = Bundle(for: type)
+        let fileName = String(describing: type)
+        let nib = UINib(nibName: fileName, bundle: bundle)
+        
+        if bundle.path(forResource: fileName, ofType: "nib") != nil
+        {
+            self.register(nib, forCellReuseIdentifier: fileName)
+        }
+        else
+        {
+            self.register(type, forCellReuseIdentifier: fileName)
+        }
+        
     }
 
     func registerHeaderFooter(reuseId:String, nibName:String)
@@ -25,7 +39,19 @@ extension UITableView
     }
     
     func registerHeaderFooter(type:UITableViewHeaderFooterView.Type, reuse_id:String){
-        self.register(type, forHeaderFooterViewReuseIdentifier: reuse_id);
+        
+        let bundle = Bundle(for: type)
+        let fileName = String(describing: type)
+        let nib = UINib(nibName: fileName, bundle: bundle)
+        
+        if bundle.path(forResource: fileName, ofType: "nib") != nil
+        {
+            self.register(nib, forHeaderFooterViewReuseIdentifier: reuse_id)
+        }
+        else
+        {
+            self.register(type, forHeaderFooterViewReuseIdentifier: reuse_id)
+        }
     }
     
     
@@ -56,6 +82,40 @@ extension UITableView
             }
             
             cell = self.dequeueReusableCell(withIdentifier: reuse_id);
+            
+            break;
+        }
+        
+        return cell;
+    }
+    
+    
+    func dequeAndRegisterCell(type:BuildType, indexPath: IndexPath) -> UITableViewCell?
+    {
+        var cell:UITableViewCell?;
+        
+        switch type
+        {
+        case let .loadFromNib(nib_name, reuse_id):
+            cell = self.dequeueReusableCell(withIdentifier: reuse_id);
+            
+            if cell == nil {
+                self.registerCell(reuseId: reuse_id, nibName: nib_name)
+            }
+            
+            cell = self.dequeueReusableCell(withIdentifier: reuse_id);
+            
+            break;
+            
+            
+        case let .build(type, reuse_id):
+            cell = self.dequeueReusableCell(withIdentifier: reuse_id);
+            
+            if cell == nil && type is UITableViewCell.Type {
+                self.registerCell(type: type as! UITableViewCell.Type, reuse_id: reuse_id);
+            }
+            
+            cell = self.dequeueReusableCell(withIdentifier: reuse_id, for: indexPath)
             
             break;
         }
